@@ -1,0 +1,117 @@
+---
+---
+<!-- cmyk-to-rgb.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-578WLDMK0G"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-578WLDMK0G');
+	</script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./css/main.css">
+	{% include html/icon.html %}
+	<title>CMYK to RGB</title>
+	<meta name="description" content="CMYK to RGB 색상 코드 변환기 | Convert CMYK to RGB colors">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+	{% include html/adsense-head.html %}
+</head>
+<body>
+	<!-- main -->
+	<div id="main">
+		<div id="main-left"></div>
+		<div id="main-center">
+			<div id="main-top">
+				{% include html/main-top.html %}
+			</div>
+
+			<span class="comment">Enter CMYK values from 0 ~ 100% and press the Convert button.</span>
+			<span class="comment">CMYK 값(0 ~ 100%)을 입력하고 Convert 버튼을 누르세요.</span>
+
+			<table class="cmyk-to-rgb-calc">
+				<tbody>
+					<tr>
+						<td>Cyan color (C, %):</td>
+						<td><input type="text" id="c" placeholder="0" maxlength="3" autofocus=""></td>
+					</tr>
+					<tr>
+						<td>Magenta color (M, %):</td>
+						<td><input type="text"id="m" maxlength="3" placeholder="0"></td>
+					</tr>
+					<tr>
+						<td>Yellow color (Y, %):</td>
+						<td><input type="text" id="y" maxlength="3" placeholder="0"></td>
+					</tr>
+					<tr>
+						<td>Black key color (K, %):</td>
+						<td><input type="text" id="k" maxlength="3" placeholder="0"></td>
+					</tr>
+					<tr>
+						<td class="tdbtnline">
+							<button type="button" title="Convert" class="btn" onclick="cmykToRgb()">Convert</button>
+						</td>
+						<td class="tdbtnline">
+							<button type="reset" title="Reset" class="btn" onclick="cmykToRgbClear()">Reset</button>
+						</td>
+						<td class="tdbtnline">
+							<button type="button" title="Swap conversion" class="btn" onclick="location.href='rgb-to-cmyk.html';"><span>⇅</span> Swap</button>
+						</td>
+					</tr>
+					<tr>
+						<td>Red color (R):</td>
+						<td><input type="text" id="r" readonly=""></td>
+					</tr>
+					<tr>
+						<td>Green color (G):</td>
+						<td><input type="text" id="g" readonly=""></td>
+					</tr>
+					<tr>
+						<td>Blue color (B):</td>
+						<td><input type="text" id="b" readonly=""></td>
+					</tr>
+					<tr>
+						<td>Hex:</td>
+						<td><input type="text" id="hex" readonly=""></td>
+					</tr>
+					<tr>
+						<td>Color preview:</td>
+						<td><input id="preview" readonly="" style="background-color: rgb(255, 255, 255);height:70px; border:1px solid black"></td>
+					</tr>
+				</tbody>
+			</table>
+
+			{% include html/similar-complementary-color.html %}
+
+			<div class="link-table">
+				{% include html/cmyk-to-rgb-color-table.html %}
+
+			</div>
+
+		</div>
+		<div id="main-right"></div>
+	</div><!-- main end -->
+	
+	<!-- footer -->
+	<div id="footer">
+		{% include html/footer.html %}
+	</div><!-- footer end -->
+
+<script>
+{% include js/cmyk-to-rgb/cmyk-to-rgb.js %}
+{% include js/cmyk-to-rgb/cmyk-to-rgb-clear.js %}
+{% include js/cmyk-to-rgb/cmyk-to-rgb-validate.js %}
+{% include js/similar-complementary-color.js %}
+{% include js/navbar.js %}
+</script>
+
+
+</body>
+
+</html>
+

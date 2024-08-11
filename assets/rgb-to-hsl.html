@@ -1,0 +1,116 @@
+---
+---
+<!-- rgb-to-hsl.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-T5YT2YFBGR"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-T5YT2YFBGR');
+	</script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./css/main.css">
+	{% include html/icon.html %}
+	<title>RGB to HSL</title>
+	<meta name="description" content="RGB to HSL 색상 코드 변환기 | Convert RGB to HSL colors">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+	{% include html/adsense-head.html %}
+</head>
+<body>
+	<!-- main -->
+	<div id="main">
+		<div id="main-left"></div>
+		<div id="main-center">
+			<div id="main-top">
+				{% include html/main-top.html %}
+			</div>
+
+			<span class="comment">Enter red, green and blue color levels (0 ~ 255) and press the Convert button.</span>
+			<span class="comment">R, G, B 값(0 ~ 255)을 입력하고 Convert 버튼을 누르세요.</span>
+
+			<table class="rgb-to-hsl-calc">
+				<tbody>
+					<tr>
+						<td>Enter red color (R):</td>
+						<td><input type="number" min="0" max="255" step="1" id="r" style="width:200px" placeholder="0" autofocus=""></td>
+					</tr>
+					<tr>
+						<td>Enter green color (G):</td>
+						<td><input type="number" min="0" max="255" step="1"  id="g" style="width:200px" placeholder="0"></td>
+					</tr>
+					<tr>
+						<td>Enter blue color (B):</td>
+						<td><input type="number" min="0" max="255" step="1" id="b" style="width:200px" placeholder="0"></td>
+					</tr>
+					<tr>
+						<td class="tdbtnline">
+							<button onclick="rgbToHsl()" title="Convert" type="button" value="Convert" class="btn">
+								Convert
+							</button>
+						</td>
+						<td class="tdbtnline">
+							<button onclick="rgbToHslClear()" title="Reset" type="button" value="Reset" class="btn">
+								Reset
+							</button>
+						</td>
+						<td class="tdbtnline">
+							<button type="button" title="Swap conversion" class="btn btn-secondary" onclick="location.href='hsl-to-rgb.html';">
+								<span>⇅</span> Swap
+							</button>
+						</td>
+					</tr>
+					<tr>
+						<td>Hue (H, °):</td>
+						<td><input type="text" id="h" style="width:200px" readonly="readonly"></td>
+					</tr>
+					<tr>
+						<td>Saturation (S, %):</td>
+						<td><input type="text" id="s" style="width:200px" readonly="readonly"></td>
+					</tr>
+					<tr>
+						<td>Lightness (L, %):</td>
+						<td><input type="text" id="l" style="width:200px" readonly="readonly"></td>
+					</tr>
+					<tr>
+						<td>Color preview:</td>
+						<td>
+							<input id="preview" style="height: 50px; width: 200px; border: 1px solid black; background-color: rgb(0, 0, 0);" readonly="readonly">
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			{% include html/similar-complementary-color.html %}
+
+			<div class="link-table">
+				{% include html/rgb-to-hsl-color-table.html %}
+
+			</div>
+		</div>
+		<div id="main-right"></div>
+	</div><!-- main end -->
+	
+	<!-- footer -->
+	<div id="footer">
+		{% include html/footer.html %}
+	</div><!-- footer end -->
+
+<script>
+{% include js/rgb-to-hsl/rgb-to-hsl.js %}
+{% include js/rgb-to-hsl/rgb-to-hsl-clear.js %}
+{% include js/rgb-to-hsl/rgb-to-hsl-validate.js %}
+{% include js/similar-complementary-color.js %}
+{% include js/navbar.js %}
+</script>
+
+
+</body>
+
+</html>
+

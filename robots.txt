@@ -1,0 +1,5 @@
+User-agent: *
+
+Allow: /color-converter/assets/
+
+Sitemap: https://atomic0x90.github.io/color-converter/sitemap.xml

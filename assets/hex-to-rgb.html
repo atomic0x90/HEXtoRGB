@@ -1,0 +1,102 @@
+---
+---
+<!-- hex-to-rgb.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-SMM4JVV18E"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-SMM4JVV18E');
+	</script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./css/main.css">
+	{% include html/icon.html %}
+	<title>HEX to RGB</title>
+	<meta name="description" content="HEX to RGB 색상 코드 변환기 | Convert HEX to RGB colors">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+	{% include html/adsense-head.html %}
+</head>
+<body>
+	<!-- main -->
+	<div id="main">
+		<div id="main-left"></div>
+		<div id="main-center">
+			<div id="main-top">
+				{% include html/main-top.html %}
+			</div>
+
+			<span class="comment">Enter 6 digits HEX color code and press the Convert button. You can add an alpha(α) value and enter it as 8 characters.</span>
+			<span class="comment">6자리 HEX 색상 코드를 입력하고 Convert 버튼을 누르세요. 알파(α) 값을 추가하여 8자리로 입력할 수도 있습니다.</span>
+
+
+			<form id="calcform" name="calcform" autocomplete="off">
+				<div class="calcline">
+					<label for="hex" class="form-label">Hex color code (#RRGGBB)</label>
+					<input type="text" id="hex" name="hex" placeholder="000000" minlength="3" maxlength="8" class="form-control" autofocus="">
+				</div>
+				<div class="btnline">
+					<button type="button" title="Convert" class="btn" onclick="setValue(hexToRgb())">Convert</button>
+					<button type="reset" title="Reset" class="btn" onclick="hexToRgbClear()">Reset</button>
+					<button type="button" title="Swap conversion" class="btn" onclick="location.href='rgb-to-hex.html';">
+						<span>⇅</span> Swap
+					</button>
+				</div>
+				<div class="calcline row">
+					<div class="col">
+						<label for="r" class="form-label">Red (0-255)</label>
+						<input type="text" id="r" name="r" class="form-control" readonly="">
+					</div>
+					<div class="col">
+						<label for="g" class="form-label">Green (0-255)</label>
+						<input type="text" id="g" name="g" class="form-control" readonly="">
+					</div>
+					<div class="col">
+						<label for="b" class="form-label">Blue (0-255)</label>
+						<input type="text" id="b" name="b" class="form-control" readonly="">
+					</div>
+					</div>
+				</div>
+				<div class="calcline">
+					<label for="css" class="form-label">CSS color</label>
+					<input type="text" id="css" name="css" class="form-control" readonly="">
+				</div>
+				<div class="calcline">
+					<label for="color" class="form-label">Color preview</label>
+					<input type="text" id="preview" class="form-control" style="height:70px; border:1px solid black" readonly="">
+				</div>
+			</form>
+
+			{% include html/similar-complementary-color.html %}
+
+			<div class="link-table">
+				{% include html/hex-to-rgb-color-table.html %}
+
+			</div>
+
+		</div>
+		<div id="main-right"></div>
+	</div><!-- main end -->
+	
+	<!-- footer -->
+	<div id="footer">
+		{% include html/footer.html %}
+	</div><!-- footer end -->
+
+<script>
+{% include js/hex-to-rgb/hex-to-rgb.js %}
+{% include js/hex-to-rgb/hex-to-rgb-clear.js %}
+{% include js/similar-complementary-color.js %}
+{% include js/navbar.js %}
+</script>
+
+
+</body>
+
+</html>
+
