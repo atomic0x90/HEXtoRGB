@@ -1,0 +1,128 @@
+---
+---
+<!-- rgb-to-hsv.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-2FFWFF1290"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-2FFWFF1290');
+	</script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./css/main.css">
+	{% include html/icon.html %}
+	<title>RGB to HSV</title>
+	<meta name="description" content="RGB to HSV 색상 코드 변환기 | Convert RGB to HSV colors">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+	{% include html/adsense-head.html %}
+</head>
+<body>
+	<!-- main -->
+	<div id="main">
+		<div id="main-left"></div>
+		<div id="main-center">
+			<div id="main-top">
+				{% include html/main-top.html %}
+			</div>
+
+			<span class="comment">Enter 6 digits hex code or enter red, green and blue color levels (0 ~ 255) and press the Convert button.</span>
+			<span class="comment">6자리 HEX 코드를 입력하거나, R, G, B 값(0 ~ 255)을 입력하고 Convert 버튼을 누르세요.</span>
+
+			<table class="rgb-to-hsv-calc">
+				<tbody>
+					<tr>
+						<td>Enter RGB hex code (#):</td>
+						<td>
+							<input type="text" id="hex" style="width:200px" placeholder="000000" onblur="hexToRgb()" autofocus="" maxlength="6">
+						</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>or</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>Enter red color (R):</td>
+						<td><input type="text" id="r" style="width:200px" placeholder="0" onblur="rgbToHex()"></td>
+					</tr>
+					<tr>
+						<td>Enter green color (G):</td>
+						<td><input type="text" id="g" style="width:200px" placeholder="0" onblur="rgbToHex()"></td>
+					</tr>
+					<tr>
+						<td>Enter blue color (B):</td>
+						<td><input type="text" id="b"style="width:200px" placeholder="0" onblur="rgbToHex()"></td>
+					</tr>
+					<tr>
+						<td class="tdbtnline">
+							<button onclick="rgbToHsv()" title="Convert" type="button" value="Convert" class="btn">
+								Convert
+							</button>
+						</td>
+						<td class="tdbtnline">
+							<button onclick="rgbToHsvClear()" title="Reset" type="button" value="Reset" class="btn">
+								Reset
+							</button>
+						</td>
+						<td class="tdbtnline">
+							<button type="button" title="Swap conversion" class="btn btn-secondary" onclick="location.href='hsv-to-rgb.html';">
+								<span>⇅</span> Swap
+							</button>
+						</td>
+					</tr>
+					<tr>
+						<td>Hue (H, °):</td>
+						<td><input type="text" id="h"style="width:200px" readonly="readonly"></td>
+					</tr>
+					<tr>
+						<td>Saturation (S, %):</td>
+						<td><input type="text" id="s" style="width:200px" readonly="readonly"></td>
+					</tr>
+					<tr>
+						<td>Value (V, %):</td>
+						<td><input type="text" id="v" style="width:200px" readonly="readonly"></td>
+					</tr>
+					<tr>
+						<td>Color preview:</td>
+						<td><input id="preview" style="height:50px; width:200px; border:1px solid black" readonly="readonly"></td>
+					</tr>
+				</tbody>
+			</table>
+
+			{% include html/similar-complementary-color.html %}
+
+			<div class="link-table">
+				{% include html/rgb-to-hsv-color-table.html %}
+
+			</div>
+
+		</div>
+		<div id="main-right"></div>
+	</div><!-- main end -->
+	
+	<!-- footer -->
+	<div id="footer">
+		{% include html/footer.html %}
+	</div><!-- footer end -->
+
+<script>
+{% include js/rgb-to-hsv/rgb-to-hsv.js %}
+{% include js/rgb-to-hsv/rgb-to-hsv-clear.js %}
+{% include js/rgb-to-hsv/rgb-to-hsv-validate.js %}
+{% include js/rgb-to-hsv/onblur.js %}
+{% include js/similar-complementary-color.js %}
+{% include js/navbar.js %}
+</script>
+
+
+</body>
+
+</html>
+
